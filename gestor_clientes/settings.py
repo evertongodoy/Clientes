@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'clientes'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'gestor_clientes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates_gestor'], # Video 12, secao 2 - Templates Django 2 Heroku
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +79,16 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+
+    #'default': {
+    #    'ENGINE': 'django.db.backends.oracle',
+    #    'NAME': '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.99.100)(PORT=8415)))(CONNECT_DATA=(SERVICE_NAME=XE)))',
+    #    'USER': 'HR',
+    #    'PASSWORD': 'HR',
+    #}
+    # Erros com oracle 11
+    # https://stackoverflow.com/questions/48002977/how-to-make-django-2-0-to-use-oracle-11g-syntax-instead-of-12c
+    # https://stackoverflow.com/questions/28806412/sql-error-ora-02000-missing-always-keyword-when-create-identity-column-based-t
 }
 
 
@@ -103,12 +114,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
+# Internacionalizacao
 USE_I18N = True
 
+# Regionalizacao
 USE_L10N = True
 
 USE_TZ = True
@@ -117,4 +130,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# Pasta base dos arquivos Static
 STATIC_URL = '/static/'
+
+# DIRETORIO DE ARQUIVOS STATICOS. Aqui vai ser definido o nome do diretorio
+STATICFILES_DIRS = [
+    'estaticos',
+]
