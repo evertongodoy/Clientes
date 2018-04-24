@@ -153,4 +153,4 @@ MEDIA_ROOT = 'medias'
 
 
 
-# de secao 2, video 14 ate...
+# de secao 2, video 14 ate secao 3, aula 19
