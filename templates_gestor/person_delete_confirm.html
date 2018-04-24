@@ -9,13 +9,16 @@
 	<title>HTML5 – Estrutura básica</title>
 </head>
 <body>
+
+	<h1>Quer realmente deletar essa pessoa {{ pessoa.first_name }} ?</h1>
+
 		     			 <!--Sem a enctype nao sera considerada os dados de media do formulario-->
 	<!--Foi removida a action="{% url 'persons_new' %}" na secao 3, aula 19 com 07:10-->	     			 
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
-		{{ formulario }}
+		<!--{{ formulario }} Comentei na Secao 3, aula 20--> 
 
-		<input type="submit" value="Salvar"/>
+		<input type="submit" value="Deletar"/>
 
 	</form>
 
