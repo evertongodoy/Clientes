@@ -137,3 +137,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     'estaticos',
 ]
+
+
+# Arquivos estaticos sao colocados no servidor pelo proprio desenvolvedor
+# Arquivos de midia sao colocados no servidor pelo usuario
+
+# 1o - precisa comecar e terminar com barras
+MEDIA_URL = '/media/'
+#POSSIVEL ERRO:
+#ERRORS:
+#?: (urls.E006) The MEDIA_URL setting must end with a slash.
+
+# 2o -Pasta onde voce vai salvar os arquivos de media.
+MEDIA_ROOT = 'medias'
+
+
+
+# de secao 2, video 14 ate...
